@@ -1,21 +1,28 @@
-const express = require("express");
-const itemRoutes = require('./routes/item.routes')
+const express = require('express')
+const app = express()
+const cors = require('cors')
+require('./database/connction')
 
-// TODO: Update this
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// const db = require('./database-mysql');
-// const db = require('./database-mongo');
+const Article = require('./routes/Article.router')
+const Category = require('./routes/Category.router')
+const Users = require('./routes/Users.router')
 
-const app = express();
-const PORT = process.env.PORT || 3000
+app.use(express.json())
+
+const corsOptions = {
+  origin: 'http://localhost:3000', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
+};
+app.use(cors(corsOptions));
 
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/../client/dist"));
+app.use('/api/article', Article)
+app.use('/api/category', Category)
+app.use('/api/users', Users)
 
-app.use("/api/items", itemRoutes);
+const port = process.env.PORT || 3001
 
-app.listen(PORT, function () {
-  console.log("listening on port 3000!");
-});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

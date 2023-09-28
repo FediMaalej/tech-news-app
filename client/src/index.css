@@ -1,0 +1,237 @@
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+#landing_page {
+    position: relative;
+    height: 95ch;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: page;
+    animation-duration: 3s;
+    animation-delay: 4.8s;
+}
+
+@keyframes page {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.title_page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_title {
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#stroke1 { 
+    width: 0%;
+    height: 2px;
+    background-color: aliceblue;
+    animation-name: stroke1;
+    animation-duration: 1.2s;
+    animation-delay: 5.3s;
+    animation-fill-mode: both;
+}
+
+#stroke2 {
+    width: 0%;
+    height: 2px;
+    background-color: aliceblue;
+    animation-name: stroke2;
+    animation-duration: 1.2s;
+    animation-delay: 5.3s;
+    animation-fill-mode: both;
+}
+
+@keyframes stroke1 {
+    form {width: 0%;}
+    to {width: 100%;}
+}
+
+@keyframes stroke2 {
+    form {width: 0%;}
+    to {width: 100%;}
+}
+
+.image_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 0px;
+    height: 400px;
+    animation-name: imgfade;
+    animation-duration: 1.2s;
+    animation-delay: 5.6s;
+    animation-fill-mode: both;
+    /* filter: brightness(100%); */
+    /* filter: contrast(110%); */
+}
+
+@keyframes imgfade {
+    form {width: 0px;}
+    to {width: 700px;}
+}
+
+.image {
+    position: absolute;
+    left: -400px;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    image-rendering: optimizeQuality;
+    background-image: url('./assest/banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    z-index: 0;
+}
+
+.img_title {
+    position: absolute;
+    color: white;
+    left: 180px;
+    bottom: 67px;
+    font-size: 90px;
+    font-family: "Signika Negative", sans-serif, Arial;
+    font-weight: bolder;
+    text-transform: uppercase;
+    z-index: 1;
+    animation-name: textfade;
+    animation-duration: 2.2s;
+    animation-delay: 5.6s;
+    animation-fill-mode: both;
+}
+
+@keyframes textfade {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+#body_page {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    color: #f1f1f1;
+}
+
+
+.newsLetter {
+    position: relative;
+    width: 45%;
+    border-radius: 80px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+}
+
+#post_image {
+    position: absolute;
+    height: 300px;
+    width: 450px;
+    left: 25px;
+    border: #f1f1f1 solid 0px;
+    border-radius: 0px;
+}
+
+.news_desc {
+    position: absolute;
+    text-align: start;
+    width: 270px;
+    height: 310px;
+    right: 0px;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 25px;
+}
+
+.news_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-size: 30px;
+    text-align: center;
+}
+
+#content {
+    font-size: 18px;
+    text-align: justify;
+}
+
+.author_like {
+    display: flex;
+}
+
+#like {
+    position: absolute;
+    left: 500px;
+}
+
+.delete_btn {
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: red;
+    color: #f1f1f1;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
